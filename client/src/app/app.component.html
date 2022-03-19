@@ -1,0 +1,10 @@
+<h1>Antimage</h1>
+
+<ul>
+  <li (click)="toggleModule('rxjs')">rxjs</li>
+</ul>
+
+
+<div class="content">
+  <app-rxjs *ngIf="activeModule === 'rxjs'"></app-rxjs>
+</div>
