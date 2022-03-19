@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'client';
 
-  activeModule: string = '';
+  activeModule: string = 'chat';
 
   toggleModule(module: string) {
     this.activeModule = module;

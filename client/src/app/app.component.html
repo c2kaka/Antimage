@@ -1,10 +1,15 @@
-<h1>Antimage</h1>
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer opened #drawer class="example-sidenav" mode="side">
+    <h1>Antimage</h1>
+    <ul>
+      <li (click)="toggleModule('rxjs')">rxjs</li>
+      <li (click)="toggleModule('chat')">chat</li>
+    </ul>
+  </mat-drawer>
 
-<ul>
-  <li (click)="toggleModule('rxjs')">rxjs</li>
-</ul>
+  <div class="content">
+    <app-rxjs *ngIf="activeModule === 'rxjs'"></app-rxjs>
 
-
-<div class="content">
-  <app-rxjs *ngIf="activeModule === 'rxjs'"></app-rxjs>
-</div>
+    <app-chat *ngIf="activeModule === 'chat'"></app-chat>
+  </div>
+</mat-drawer-container>

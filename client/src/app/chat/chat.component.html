@@ -1,0 +1,26 @@
+<p>
+  <mat-toolbar>
+    <span>Chatroom</span>
+  </mat-toolbar>
+</p>
+
+<mat-card>
+  <mat-card-title>Chatroom users</mat-card-title>
+  <mat-card-subtitle>
+    There are currently <strong>{{users}}</strong> users online. Start
+    chatting!
+  </mat-card-subtitle>
+</mat-card>
+
+<mat-list role="list">
+  <mat-list-item role="listitem" *ngFor="let msg of messages">{{ msg }}</mat-list-item>
+</mat-list>
+
+<form class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Message</mat-label>
+    <input [ngModelOptions]="{standalone: true}" [(ngModel)]="message" (keyup.enter)="addChat()" matInput maxlength="256" placeholder="Ex. I need help with...">
+  </mat-form-field>
+</form>
+
+<button mat-raised-button color="primary" (click)="addChat()">Send</button>
